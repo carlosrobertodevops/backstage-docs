@@ -4,10 +4,12 @@ metadata:
   name: meu-projeto
   description: Documentação do meu projeto
   annotations:
-    url: https://github.com/carlosroberto/backstage-docs/blob/main/docs/index.md
+    url: https://github.com/carlosroberto/backstage-docs/blob/main/catalog-info.yaml
     backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:carlos
   lifecycle: production
-  definition: https://github.com/carlosroberto/backstage-docs/blob/main/catalog-info.yaml
+  links:
+  - url: https://github.com/carlosroberto/backstage-docs/blob/main/catalog-info.yaml
+    title: Repositório GitHub
