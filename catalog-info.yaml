@@ -1,9 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: carlosrobertodevops-docs
-  description: Documentação de exemplo para o TechDocs
+  name: meu-projeto
+  description: Documentação do meu projeto
 spec:
-  type: documentation
+  type: service
   owner: user:carlos
-  lifecycle: experimental
+  lifecycle: production
+  definition: https://github.com/carlosroberto/backstage-docs/blob/main/catalog-info.yaml
