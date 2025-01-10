@@ -1,0 +1,4 @@
+site_name: Minha Documentação
+nav:
+- Home: index.md
+- Guia: guia.md

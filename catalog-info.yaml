@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: carlosrobertodevops-docs
+  description: Documentação de exemplo para o TechDocs
+spec:
+  type: documentation
+  owner: user:carlos
+  lifecycle: experimental
