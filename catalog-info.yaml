@@ -3,6 +3,9 @@ kind: Component
 metadata:
   name: meu-projeto
   description: Documentação do meu projeto
+  annotations:
+    url: https://github.com/carlosroberto/backstage-docs/blob/main/docs/index.md
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:carlos
