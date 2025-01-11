@@ -14,5 +14,7 @@ pip install "mkdocs-techdocs-core==1.*"
 # Generate
 techdocs-cli generate --no-docker
 
+gh secret set TECHDOCS_S3_BUCKET_NAME -r "$REPOSITORY_URL" -b  "$TECHDOCS_BUCKET"
+
 # Publish
-techdocs-cli publish --publisher-type awsS3 --storage-name <bucket/container> --entity <Namespace/Kind/Name>
+techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_BUCKET --entity <Namespace/Kind/Name>
