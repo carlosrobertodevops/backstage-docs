@@ -27,6 +27,10 @@ jobs:
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
 
     steps:
+      - name: Debug Variables
+        run: echo "Namespace: $ENTITY_NAMESPACE, Kind: $ENTITY_KIND, Name: $ENTITY_NAME"
+
+    steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -64,4 +68,3 @@ jobs:
       - name: Publish docs site
         run:
           techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
-          #techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_BUCKET --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
