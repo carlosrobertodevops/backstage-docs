@@ -26,9 +26,9 @@ jobs:
       # with the correct entity name. This is same as metadata.name in the entity's catalog-info.yaml
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
 
-    steps:
-      - name: Debug Variables
-        run: echo "Namespace: $ENTITY_NAMESPACE, Kind: $ENTITY_KIND, Name: $ENTITY_NAME"
+    # steps:
+    #   - name: Debug Variables
+    #     run: echo "Namespace: $ENTITY_NAMESPACE, Kind: $ENTITY_KIND, Name: $ENTITY_NAME"
 
     steps:
       - name: Checkout code
