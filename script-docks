@@ -1,0 +1,18 @@
+#!/bin/bash
+# This is an example script
+# Carregar variáveis do .env
+export $(grep -v '^#' .env | xargs)
+
+# Prepare
+git clone $REPOSITORY_URL
+cd repo
+
+# Install @techdocs/cli, mkdocs and mkdocs plugins
+npm install -g @techdocs/cli
+pip install "mkdocs-techdocs-core==1.*"
+
+# Generate
+techdocs-cli generate --no-docker
+
+# Publish
+techdocs-cli publish --publisher-type awsS3 --storage-name <bucket/container> --entity <Namespace/Kind/Name>
