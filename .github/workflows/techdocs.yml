@@ -10,7 +10,7 @@ on:
 
 jobs:
   publish-techdocs-site:
-    runs-on: ubuntu-22
+    runs-on: ubuntu-latest
 
     # The following secrets are required in your CI environment for publishing files to AWS S3.
     # e.g. You can use GitHub Organization secrets to set them for all existing and new repositories.
@@ -21,7 +21,7 @@ jobs:
       AWS_REGION: ${{ secrets.AWS_REGION }}
       ENTITY_NAMESPACE: 'default'
       ENTITY_KIND: 'Component'
-      ENTITY_NAME: 'my-doc-entity'
+      ENTITY_NAME: 'meu-projeto'
       # In a Software template, Scaffolder will replace {{cookiecutter.component_id | jsonify}}
       # with the correct entity name. This is same as metadata.name in the entity's catalog-info.yaml
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
