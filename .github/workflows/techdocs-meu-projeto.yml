@@ -26,9 +26,9 @@ jobs:
       # with the correct entity name. This is same as metadata.name in the entity's catalog-info.yaml
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
 
-    steps:
-      - name: Debug Variables
-        run: echo "Namespace: $ENTITY_NAMESPACE, Kind: $ENTITY_KIND, Name: $ENTITY_NAME"
+    # steps:
+    #   - name: Debug Variables
+    #     run: echo "Namespace: $ENTITY_NAMESPACE, Kind: $ENTITY_KIND, Name: $ENTITY_NAME"
 
     steps:
       - name: Checkout code
@@ -66,5 +66,4 @@ jobs:
         run: techdocs-cli generate --no-docker --verbose
 
       - name: Publish docs site
-        run:
-          techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
+        run: techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
